@@ -27,5 +27,13 @@
   },
   "dependencies": {
     "harmony-reflect": "^1.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erictrinh/safe-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erictrinh/safe-proxy/issues"
+  },
+  "homepage": "https://github.com/erictrinh/safe-proxy"
 }
