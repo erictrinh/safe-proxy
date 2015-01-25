@@ -14,7 +14,7 @@ Usage of ES6 Proxies is hidden behind a flag in [io.js](https://iojs.org/), so i
 
 Use `safe-proxy` like this:
 
-```
+```javascript
 var safe = require('safe-proxy');
 safe(obj).that.is.very.nested.__value;
 // the same as `obj.that.is.very.nested` EXCEPT
@@ -23,7 +23,7 @@ safe(obj).that.is.very.nested.__value;
 
 You can access arrays and call functions as you normally would. Just remember to access `__value` at the end.
 
-```
+```javascript
 safe(obj).nested.property.and.array[0].func('some', 'args').__value;
 ```
 
