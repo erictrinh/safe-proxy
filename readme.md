@@ -10,7 +10,7 @@ npm install safe-proxy
 
 ## Usage
 
-Usage of ES6 Proxies is hidden behind a flag in [io.js](https://iojs.org/), so in order to use them, you will need to run your application with the `--harmony-proxies` flag.
+Usage of ES6 Proxies is hidden behind a flag in Node, so in order to use them, you will need to run your application with the `--harmony-proxies` flag.
 
 Use `safe-proxy` like this:
 
@@ -33,7 +33,7 @@ You can think of calling `safe(obj)` as wrapping `obj` in an object which will n
 
 ## Development
 
-Install [io.js](https://iojs.org/), clone this repo, and then from directory root run `npm install`. Start running tests with `npm test`. Tests will re-run when files change.
+Clone this repo, and then from directory root run `npm install`. Start running tests with `npm test`. Tests will re-run when files change.
 
 ## License
 
