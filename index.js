@@ -1,6 +1,8 @@
 var util = require('util');
 
-module.exports = function safe(obj) {
+var value = Symbol('value');
+
+var safe = function safe(obj) {
   var target = isObject(obj) ? obj : function() {};
 
   return new Proxy(target, {
@@ -13,7 +15,7 @@ module.exports = function safe(obj) {
         }
       }
 
-      if (name === '__value') {
+      if (name === value) {
         return obj;
       }
 
@@ -35,6 +37,10 @@ module.exports = function safe(obj) {
     }
   });
 };
+
+safe.value = value;
+
+module.exports = safe;
 
 var isFunction = function(obj) {
   return typeof obj === 'function';
