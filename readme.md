@@ -16,20 +16,20 @@ Use `safe-proxy` like this:
 
 ```javascript
 var safe = require('safe-proxy');
-safe(obj).that.is.very.nested.__value;
+safe(obj).that.is.very.nested[safe.value];
 // the same as `obj.that.is.very.nested` EXCEPT
 // returns undefined if any property in the chain is undefined
 ```
 
-You can access arrays and call functions as you normally would. Just remember to access `__value` at the end.
+You can access arrays and call functions as you normally would. Just remember to access `[safe.value]` at the end.
 
 ```javascript
-safe(obj).nested.property.and.array[0].func('some', 'args').__value;
+safe(obj).nested.property.and.array[0].func('some', 'args')[safe.value];
 ```
 
 ## What's going on?
 
-You can think of calling `safe(obj)` as wrapping `obj` in an object which will not throw an error no matter what properties you access or functions you call on it (even if `obj` is undefined, for instance). In order to *unwrap* the value, you’ll need to access the special property `__value`.
+You can think of calling `safe(obj)` as wrapping `obj` in an object which will not throw an error no matter what properties you access or functions you call on it (even if `obj` is undefined, for instance). In order to *unwrap* the value, you’ll need to access the special property `value`, which is a symbol exported by `safe-proxy`.
 
 ## Development
 
