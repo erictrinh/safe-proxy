@@ -1,5 +1,3 @@
-require('harmony-reflect'); // patch proxy to latest es6 spec
-
 module.exports = function safe(obj) {
   var target = isObject(obj) ? obj : function() {};
 

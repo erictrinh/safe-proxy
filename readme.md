@@ -10,7 +10,7 @@ npm install safe-proxy
 
 ## Usage
 
-Usage of ES6 Proxies is hidden behind a flag in Node, so in order to use them, you will need to run your application with the `--harmony-proxies` flag.
+ES6 proxies are only supported in Node.js >= 6.0.0 and the latest major browsers (see http://kangax.github.io/compat-table/es6/#test-Proxy).
 
 Use `safe-proxy` like this:
 
