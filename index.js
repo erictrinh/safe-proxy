@@ -1,8 +1,18 @@
+var util = require('util');
+
 module.exports = function safe(obj) {
   var target = isObject(obj) ? obj : function() {};
 
   return new Proxy(target, {
     get: function(receiver, name) {
+      if (name === util.inspect.custom) {
+        return function(depth, options) {
+          var padding = ' '.repeat('safe( '.length);
+          var inner = util.inspect(obj, options).replace(/\n/g, '\n' + padding);
+          return options.stylize('safe', 'special') + '( ' + inner + ' )';
+        }
+      }
+
       if (name === '__value') {
         return obj;
       }

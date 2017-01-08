@@ -118,5 +118,4 @@ describe('safe-proxy', function() {
   it('should be able to call properties on an instance of a class', function() {
     expect(safeBob.getName().__value).to.equal('Bob');
   });
-
 });
